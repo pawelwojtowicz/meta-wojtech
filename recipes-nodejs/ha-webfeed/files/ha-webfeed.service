@@ -1,0 +1,10 @@
+[Unit]
+Description=Home Automation webb application feed
+
+[Service]
+ExecStart=node /usr/lib/node_modules/ha-webfeed/server.js
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=mult-user.target
