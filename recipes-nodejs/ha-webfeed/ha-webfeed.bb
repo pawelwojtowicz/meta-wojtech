@@ -1,17 +1,20 @@
 SUMMARY = "The webfeed for the HA system"
 HOMEPAGE = "https://github.com/pawelwojtowicz/ha-webfeed#readme"
 
-LICENSE = ""
-LIC_FILES_CHKSUM = "file://package.json;md5=dd3defdc3f13b2f084eb1d3f18eb09b1"
+LIC_FILES_CHKSUM = "file://package.json;md5=80080ef70cbb44594063806fc2088bcc"
+
+LICENSE = "MIT"
 
 SRC_URI = " \
     git://github.com/pawelwojtowicz/ha-webfeed.git;protocol=https \
-    file://ha-webfeed.service \
+    npmsw://${THISDIR}/${BPN}/npm-shrinkwrap.json \
+    file://${THISDIR}/${BPN}/ha-webfeed.service \
     "
 
+# Modify these as desired
 PV = "0.0.1+git${SRCPV}"
-SRCREV = "702d0c3d33c0e37756edb203f3b8d563cb42a44a"
+SRCREV = "970d9275be323b2d4d3e648be5e525a1cf434de1"
+
+S = "${WORKDIR}/git"
 
 inherit npm systemd
-
-SYSTEMD_SERVICE_${PN}="ha-webfeed.service"
