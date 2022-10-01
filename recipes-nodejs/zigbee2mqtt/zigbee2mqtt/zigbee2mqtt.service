@@ -1,0 +1,10 @@
+[Unit]
+Description=Home Automation webb application feed
+
+[Service]
+ExecStart=node /usr/lib/node_modules/zigbee2mqtt/index.js
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target

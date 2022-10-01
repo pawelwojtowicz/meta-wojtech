@@ -6,7 +6,7 @@ LIC_FILES_CHKSUM = "file://package.json;md5=80080ef70cbb44594063806fc2088bcc"
 LICENSE = "MIT"
 
 SRC_URI = " \
-    git://github.com/pawelwojtowicz/ha-webfeed.git;protocol=https \
+    git://github.com/pawelwojtowicz/ha-webfeed.git;branch=master \
     npmsw://${THISDIR}/${BPN}/npm-shrinkwrap.json \
     file://${THISDIR}/${BPN}/ha-webfeed.service \
     "
@@ -21,6 +21,6 @@ S = "${WORKDIR}/git"
 
 inherit npm systemd
 
-do_install_append() {
+do_install:append() {
   install -Dm 0644 ${THISDIR}/${BPN}/ha-webfeed.service ${D}${systemd_unitdir}/system/ha-webfeed.service
 }

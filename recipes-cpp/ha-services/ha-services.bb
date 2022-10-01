@@ -7,7 +7,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 DEPENDS = "mosquitto"
 
 SRC_URI = "\
-	git://github.com/pawelwojtowicz/ha-services.git;protocol=https \
+	git://github.com/pawelwojtowicz/ha-services.git;protocol=https;branch=master \
 	"
 
 # Modify these as desired
