@@ -1,0 +1,12 @@
+[Unit]
+Description=Text To Speech service
+After=mosquitto.service
+Wants=mosquitto.service
+
+[Service]
+ExecStart=/usr/bin/speakingAgent
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
