@@ -13,7 +13,7 @@ SRC_URI = "\
 
 # Modify these as desired
 PV = "0.0.1+git${SRCPV}"
-SRCREV = "2af6a1b2721810b949c7464fdfe6c9d016a982e1"
+SRCREV = "a279303f0606289aa968e0507c72450c88c68e04"
 
 S = "${WORKDIR}/git"
 
@@ -22,6 +22,9 @@ FILES:${PN}= "/lib/systemd/system/* \
               /usr/bin/* \
               "
 
+SYSTEMD_SERVICE_${PN} = " \
+    speaking-agent.service \
+    "
 
 inherit cmake systemd
 
